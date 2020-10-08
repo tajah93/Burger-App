@@ -53,7 +53,7 @@ var orm = {
             callback(res);
           });
     },
-    update: function(table, objColVals, condition, callback) {
+    updateOne: function(table, objColVals, condition, callback) {
         var queryString = "UPDATE " + table;
     
         queryString += " SET ";
