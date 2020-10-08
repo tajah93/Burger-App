@@ -4,4 +4,9 @@
 
 h1 {
     color: lime
+};
+
+#burgerLogo {
+    height: 50%;
+    width: 50%;
 }

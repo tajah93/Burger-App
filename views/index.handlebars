@@ -1,12 +1,13 @@
 <div class="container">
     <div class="jumbotron" style="background-color: black;">
+        <img src="/assets/img/burger.png" alt="burger" id="burgerLogo" style="height: 100px;">
         <h1 class="display-4" style="color: lime">Eat-da-Burger!</h1>
         <p class="lead" style="color: whitesmoke">Order it, Devour it</p>
     </div>
     <form>
         <div class="form-group row">
             <p for="inputBurger" style="color: whitesmoke; font-size: 20px">What kind of burger are you craving?</p>
-            <input type="text" class="form-control" id="inputBurger">
+            <input type="text" class="form-control" id="inputBurger" style="background-color: black; border-color: lime">
             <button class="btn" id="burgerBtn" type="submit" style="background-color: lime; margin-top: 10px; text-align: center !important">Order</button>
         </div>
         <div class="row">
@@ -14,9 +15,9 @@
                 <h2 class="headingOrder" style="color: lime;">Your order is waiting to be devoured.</h2>
                 <ul>
                     {{#each burgers}}
-                    {{#unless this.devoured}}
+                    {{#unless devoured}}
                     <p class="burger"> {{this.burger_name}}</p>
-                    <button type="button" class="btn" id="devourBtn" data-id="{{this.id}}"></button>
+                    <button type="submit" class="btn" id="devourBtn" data-id="{{this.id}}"></button>
                     {{/unless}}
                     {{/each}}
                 </ul>
