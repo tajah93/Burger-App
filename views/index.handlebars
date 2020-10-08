@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Eat-da-Burger!</h1>
+        <p class="lead">Order it, Devour it</p>
+    </div>
+    <form>
+        <div class="form-group row">
+            <label for="inputBurger">What kind of burger are you craving?</label>
+            <input type="text" class="form-control" id="inputBurger">
+            <button class="btn" id="burgerBtn" type="submit">Order</button>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="headingOrder">Your order is waiting to be devoured.</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <p class="burger"> {{this.burger_name}}</p>
+                    <button type="button" class="btn" id="devourBtn" data-id="{{this.id}}"></button>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col">
+                <h2 class="headingDevour">Devoured!</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <p class="burger"> {{this.burger_name}}</p>
+                    {{/if}}
+                    {{/each}}
+
+                </ul>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+</div>
