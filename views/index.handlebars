@@ -4,7 +4,7 @@
         <h1 class="display-4" style="color: lime">Eat-da-Burger!</h1>
         <p class="lead" style="color: whitesmoke">Order it, Devour it</p>
     </div>
-    <form>
+    <form class="order">
         <div class="form-group row">
             <p for="inputBurger" style="color: whitesmoke; font-size: 20px">What kind of burger are you craving?</p>
             <input type="text" class="form-control" id="inputBurger" value="{{this.id}}"
@@ -25,7 +25,7 @@
                     {{/each}}
                 </ul>
             </div>
-            <div class="col">
+            <div class="col" id="dev">
                 <h2 class="headingDevour" style="color: lime">Devoured!</h2>
                 <ul>
                     {{#each burgers}}
