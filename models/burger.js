@@ -7,12 +7,12 @@ var burger = {
         });
     },
     insertOne: function(cols, vals, callback) {
-        orm.selectAll("burgers", cols, vals, function(res) {
+        orm.insertOne("burgers", cols, vals, function(res) {
             callback(res);
         });
     },
     updateOne: function(objColVals, condition, callback) {
-        orm.selectAll("burgers", objColVals, condition, function(res) {
+        orm.updateOne("burgers", objColVals, condition, function(res) {
             callback(res)
         });
     }

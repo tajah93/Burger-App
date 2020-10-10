@@ -1,11 +1,11 @@
 
 $(function() {
     $(".create-form").on("submit", function(event) {
+        console.log("I'm clicked")
         event.preventDefault();
         
         var order = { 
             burger_name: $("#inputBurger").val(),
-            devoured: 0
            }
         // console.log(id);
         console.log(order);
@@ -22,6 +22,7 @@ $(function() {
     });
 
     $("#dev").on("submit", function(event) {
+        console.log("Clicked")
         event.preventDefault();
         var id = $(this).data("id");
         var dev = {
@@ -31,7 +32,7 @@ $(function() {
         console.log(id);
         console.log(dev);
 
-        $.ajax("/api/burgers" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: dev
         }).then(function() {
