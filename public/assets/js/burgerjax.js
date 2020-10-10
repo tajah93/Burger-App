@@ -1,17 +1,18 @@
 
 $(function() {
-    $(".order").on("submit", function(event) {
+    $(".create-form").on("submit", function(event) {
         event.preventDefault();
-        var id = $(this).data("id");
+        
         var order = { 
-            burger_name: $("#inputBurger").val()
+            burger_name: $("#inputBurger").val(),
+            devoured: 0
            }
-        console.log(id);
+        // console.log(id);
         console.log(order);
-
-        $.ajax("/api/burgers" + id, {
-            type: "POST"
-
+        debugger;
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: order
         }).then(
             function() {
               console.log("Order is in.");
@@ -23,12 +24,16 @@ $(function() {
     $("#dev").on("submit", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
+        var dev = {
+            devoured: 1
+        };
    
         console.log(id);
         console.log(dev);
 
         $.ajax("/api/burgers" + id, {
-            type: "PUT"
+            type: "PUT",
+            data: dev
         }).then(function() {
             console.log("Devoured");
             location.reload();
@@ -36,39 +41,6 @@ $(function() {
         )
     })
 })
-// $(function() {
-//      $("#inputBurger").on("submit", function(event) {
-//          event.preventDefault();
-//          var id = $(this).data("id");
-//          var order = $("inputBurger").val();
-//          console.log(id);
-//          console.log(order);
 
-//          $.ajax("/api/burgers" + id, {
-//              type: "PUT"
 
-//          }).then(
-//              function() {
-//                console.log("Order is in.");
-//                location.reload();
-//              }
-//          );
-//      });
-
-//     //  $(".burger").on("submit", function(event) {
-//     //      event.preventDefault();
-//     //      var id = $(this).data("id");
-//     //      var dev = $(this).children("inputBurger").val();
-//     //      console.log(id);
-//     //      console.log(dev);
-
-//     //      $.ajax("/api/burgers" + id, {
-//     //          type: "PUT"
-//     //      }).then(function() {
-//     //          console.log("Devoured");
-//     //          location.reload();
-//     //      }
-//     //      )
-//     //  })
-// })
 
