@@ -17,8 +17,9 @@ router.get("/", function(req, res) {
         burgerMod.insertOne(
             ["burger_name", "devoured"],
             [req.body.burger_name, req.body.devoured],
-            function(results) {
-                res.json({ id: results.insertID });
+            function(result) {
+                console.log("hi")
+                res.json({ id: result.insertID });
             }
         );
     });

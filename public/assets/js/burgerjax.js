@@ -13,8 +13,9 @@ $(function() {
         $.ajax("/api/burgers", {
             type: "POST",
             data: order
-        }).then(
+        }).then(      
             function() {
+                debugger;                
               console.log("Order is in.");
               location.reload();
             }
