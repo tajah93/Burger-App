@@ -17,7 +17,7 @@
                 <h2 class="headingOrder" style="color: lime;">Your order is waiting to be devoured.</h2>
                 <ul>
                     {{#each burgers}}
-                    {{#unless devoured}}
+                    {{#unless this.devoured}}
                     <p class="burger"> {{this.burger_name}}</p>
                     <button type="submit" class="btn" id="devourBtn" data-id="{{this.id}}"
                         style="background-color: lime;"></button>
